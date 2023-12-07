@@ -6,17 +6,17 @@ import { UserProvider } from '../context/user';
 import { ThemeContext, ThemeProvider } from '../context/theme';
 
 function App() {
-  const {theme, setTheme} = ThemeProvider(ThemeContext);
+  const { theme } = ThemeProvider(ThemeContext);
   return (
-    <ThemeProvider>
-      <main className={theme}>
-        {/* wrap components that need access to context data in the provider*/}
+    <main className={theme}>
+      <ThemeProvider>
         <UserProvider>
           <Header />
           <Profile />
         </UserProvider>
-      </main>
-    </ThemeProvider>
+      </ThemeProvider>
+    </main>
+
   );
 }
 

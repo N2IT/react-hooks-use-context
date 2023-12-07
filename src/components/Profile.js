@@ -2,10 +2,12 @@
 import React, { useContext } from 'react';
 // import the UserContext we created
 import { UserContext } from '../context/user';
+import { ThemeContext } from '../context/theme';
 import Interests from './Interests';
 
-function Profile({ theme }) {
+function Profile() {
   const { user } = useContext(UserContext);
+  const { theme } = useContext(ThemeContext);
 
   // now, we can use the user object just like we would if it was passed as a prop!
   if (!user) return <h2>Please Login To View Profile</h2>;

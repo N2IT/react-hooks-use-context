@@ -8,7 +8,7 @@ import { ThemeContext } from '../context/theme';
 function Header() {
   const { user, setUser } = useContext(UserContext);
   const { theme, setTheme } = useContext(ThemeContext);
-  console.log(theme)
+  // console.log(theme)
   function handleLogin() {
     if (user) {
       setUser(null);
