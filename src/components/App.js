@@ -1,20 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Header from './Header';
 import Profile from './Profile';
 // import the provider
-import { UserProvider } from '../context/user';
-import { ThemeContext, ThemeProvider } from '../context/theme';
+import { UserContext, UserProvider } from '../context/user';
+import { ThemeContext } from '../context/theme';
 
 function App() {
-  const { theme } = ThemeProvider(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   return (
     <main className={theme}>
-      <ThemeProvider>
         <UserProvider>
           <Header />
           <Profile />
         </UserProvider>
-      </ThemeProvider>
     </main>
 
   );
